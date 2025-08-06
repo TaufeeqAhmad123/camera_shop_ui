@@ -19,7 +19,13 @@ A beautifully designed and responsive **camera e-commerce UI** built with Flutte
 
 ## 📷 Screenshots
 
+<<<<<<< HEAD
 c:\Users\PMLS\OneDrive\Pictures\Screenshots\Screenshot 2025-08-07 002111.png c:\Users\PMLS\OneDrive\Pictures\Screenshots\Screenshot 2025-08-07 002130.png
+=======
+<img width="413" height="871" alt="Screenshot 2025-08-07 002111" src="https://github.com/user-attachments/assets/6cfc9155-00a6-4436-93f1-1e86b534d12d" />
+<img width="426" height="865" alt="Screenshot 2025-08-07 002130" src="https://github.com/user-attachments/assets/5bdcc660-d46d-4200-ad6d-f752bbe03a76" />
+
+>>>>>>> d3a5b15f3202908bf5881eba96aaf9ece93a7d52
 
 | Home Screen | Carousel Slider | Product Filter |
 |-------------|------------------|----------------|
