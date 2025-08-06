@@ -1,13 +1,14 @@
 class AppIcon {
-  static const String cart = 'assets/Icons/cart.svg';
-  static const String filter = 'assets/Icons/filter2.svg';
-  static const String search = 'assets/Icons/search.svg';
+  static const String cart = 'assets/icon/cart.svg';
+  static const String filter = 'assets/icon/filter.svg';
+  static const String search = 'assets/icon/search.svg';
 }
 
 class AppImg {
   static const String p1 = 'assets/camera/c1.png';
   static const String p2 = 'assets/camera/c2.png';
   static const String p3 = 'assets/camera/c3.png';
+ 
 // detila images
 
   static const String pd11 = 'assets/detailImg/c11.png';
