@@ -1,8 +1,10 @@
 import 'package:camera_shop/Model/model.dart';
 import 'package:camera_shop/const/extantion_sizedBox.dart';
 import 'package:camera_shop/const/txt_style.dart';
+import 'package:camera_shop/screen/detail_screen.dart';
 import 'package:camera_shop/widget/filterWidget.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart' as carousel;
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -15,6 +17,7 @@ class Productwidget extends StatefulWidget {
 
 class _ProductwidgetState extends State<Productwidget> {
   int _currentIndex = 0;
+  
   @override
   Widget build(BuildContext context) {
     final product = ProductModel.productList[_currentIndex];
@@ -62,9 +65,11 @@ class _ProductwidgetState extends State<Productwidget> {
                     child: SizedBox(
                       height: 58.h,
                       width: 70.w,
-                      child: CarouselSlider.builder(
+                      child:carousel. CarouselSlider.builder(
+                       
                         itemCount: ProductModel.productList.length,
-                        options: CarouselOptions(
+                        options:carousel. CarouselOptions(
+                          
                           scrollDirection: Axis.vertical,
                           aspectRatio: 16 / 9,
                           autoPlay: true,
@@ -91,12 +96,23 @@ class _ProductwidgetState extends State<Productwidget> {
                             duration: const Duration(milliseconds: 300),
                             curve: Curves.easeInOut,
                             opacity: opacity,
-                            child: Image.asset(
-                               product.productImg,
-                            height: index == 1 ? 45.h : 70.h,
-                            width: double.infinity,
-                            fit: index == 0 ? BoxFit.cover : BoxFit.fitWidth,
-
+                            child: CupertinoButton(
+                               onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => DetailScreen(product: product),
+                          ),
+                               ),
+                              child: Hero(
+                                tag: product.productImg,
+                                child: Image.asset(
+                                   product.productImg,
+                                height: index == 1 ? 45.h : 70.h,
+                                width: double.infinity,
+                                fit: index == 0 ? BoxFit.cover : BoxFit.fitWidth,
+                                
+                                ),
+                              ),
                             ),
                           );
                         },

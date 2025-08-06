@@ -10,14 +10,15 @@ class Filterwidget extends StatefulWidget {
 }
 
 class _FilterwidgetState extends State<Filterwidget> {
+   int _selectedNavbarIndex = 0;
+    final List<String> _navbarTitles = ["Mirrorless", "Modern", "Vintage"];
   @override
   Widget build(BuildContext context) {
-    int _selectedNavbarIndex = 0;
-    final List<String> _navbarTitles = ["Mirrorless", "Modern", "Vintage"];
+   
 
     return Expanded(
       child: Container(
-        height: 68.h,
+        height: 64.5.h,
         decoration: BoxDecoration(
           color: Colors.grey[300],
           borderRadius: BorderRadius.only(topRight: Radius.circular(30.sp)),
@@ -63,7 +64,7 @@ class _FilterwidgetState extends State<Filterwidget> {
                             ),
                           ),
                         ),
-                        if (_selectedNavbarIndex == 0)
+                        if (_selectedNavbarIndex == index)
                           Container(
                             margin: EdgeInsets.only(left: 10.w),
                             height: 0.8.h,

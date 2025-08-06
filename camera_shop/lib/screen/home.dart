@@ -4,6 +4,7 @@ import 'package:camera_shop/const/image.dart';
 import 'package:camera_shop/const/txt_style.dart';
 import 'package:camera_shop/widget/productWidget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -13,21 +14,13 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          topWidget(),
-          infoWidget(),
-            Productwidget(),
-        ],
-      ),
+      body: Column(children: [topWidget(), infoWidget(), Productwidget()]),
     );
   }
 }
 
 class infoWidget extends StatelessWidget {
-  const infoWidget({
-    super.key,
-  });
+  const infoWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +42,6 @@ class infoWidget extends StatelessWidget {
               context,
             ).copyWith(fontWeight: FontWeight.w400, fontSize: 22.sp),
           ),
-     
-        
         ],
       ),
     );
@@ -85,10 +76,22 @@ class topWidget extends StatelessWidget {
               child:
                   iconbutton ??
                   SvgPicture.asset(
-                    AppIcon.filter,
-                    color: Colors.white,
-                    fit: BoxFit.cover,
-                  ),
+                        AppIcon.filter,
+                        color: Colors.white,
+                        fit: BoxFit.cover,
+                      )
+                      .animate(
+                        autoPlay: true,
+                        delay: const Duration(milliseconds: 100),
+                      )
+                      .fadeIn(
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.easeInOut,
+                      )
+                      .scale(
+                        duration: const Duration(milliseconds: 1000),
+                        curve: Curves.easeInOut,
+                      ),
             ),
           ),
         ),
